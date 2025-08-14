@@ -2,6 +2,7 @@ const subtractHandler=(req,res)=>{
 
     console.log("In the Subract Request",req.url);
     const body=[];
+    let result;
     req.on('data',(chunk)=>{
         console.log(chunk);
         body.push(chunk);
@@ -14,7 +15,7 @@ const subtractHandler=(req,res)=>{
       console.log(jsonBody);
       const fullbody=Object.fromEntries(jsonBody);
       console.log(fullbody);
-      const result=parseInt(fullbody.first) - parseInt(fullbody.second);
+      result=parseInt(fullbody.first) - parseInt(fullbody.second);
       console.log(result);
       res.setHeader("Content-Type", "text/html");
       res.write(`<html">

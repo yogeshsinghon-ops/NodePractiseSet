@@ -1,5 +1,6 @@
 const multiplyHandler=(req,res)=>{
     const body=[];
+    let result;
     req.on("data",(chunk)=>{
         body.push(chunk);
     });
@@ -8,7 +9,8 @@ const multiplyHandler=(req,res)=>{
         const multiString=Buffer.concat(body).toString();
        const bodyJson= new URLSearchParams(multiString);
        const fullBody=Object.fromEntries(bodyJson);
-       const result=parseInt(fullBody.first) * parseInt(fullBody.second);
+       result=parseInt(fullBody.first) * parseInt(fullBody.second);
+       console.log(result);
        res.setHeader("Content-Type", "text/html");
        res.write(`<html">
                     <head> 

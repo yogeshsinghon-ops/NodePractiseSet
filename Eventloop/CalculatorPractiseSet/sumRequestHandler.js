@@ -1,6 +1,7 @@
 const sumRequestHandlers=(req,res)=>{
     console.log("In Sum Requiest",req.url);
     const body=[];
+    let result;
     req.on('data',(chunk)=>{
           body.push(chunk);
     });
@@ -9,10 +10,10 @@ const sumRequestHandlers=(req,res)=>{
         const params=new URLSearchParams(fullbody);
          const bodyObject=Object.fromEntries(params);
            console.log(bodyObject);
-         const result=parseInt(bodyObject.first) + parseInt(bodyObject.second);
+           result=parseInt(bodyObject.first) + parseInt(bodyObject.second);
          console.log(result);
          res.setHeader("Content-Type", "text/html");
-       res.write(`<html">
+          res.write(`<html">
                     <head> 
                           <title>Welcome to calculator</title>
                     </head>
