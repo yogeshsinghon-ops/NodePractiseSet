@@ -48,7 +48,7 @@ else  if(req.url ==='/submitDetails' ){
                 console.log(jsonStringyfy);
 
                 //fs.writeFileSync("userDetailff3631.txt", jsonStringyfy);
-                fs.writeFile('User.txt',jsonStringyfy,error=>{
+                fs.writeFile('MyUser.txt',jsonStringyfy,error=>{
                     console.log("Sucessfully return");
                     res.statusCode=302;
                     res.setHeader('Location','/');
