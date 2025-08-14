@@ -13,4 +13,4 @@ const dataAsync=fs.readFile("MyUser.txt",'utf-8',err=>{
     }
     console.log("6...synchrouns Complete");
 });
-console.log("5...compil complete");
+console.log("5...compil completed"  );
